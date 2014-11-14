@@ -19,5 +19,8 @@ excludesfile = /opt/boxen/config/git/gitignore
 [push]
 	default = current
 
+[color]
+  ui = true
+
 [credential]
 	helper = /opt/boxen/bin/boxen-git-credential
