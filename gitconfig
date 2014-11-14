@@ -1,0 +1,23 @@
+[user]
+	name = Alen Novakovic
+	email = alen@devgaze.com
+
+[github]
+	user = devgaze
+
+[hub]
+protocol = https
+
+[core]
+excludesfile = /opt/boxen/config/git/gitignore
+
+[credential]
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[push]
+	default = current
+
+[credential]
+	helper = /opt/boxen/bin/boxen-git-credential
