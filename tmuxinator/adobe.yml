@@ -24,7 +24,7 @@ windows:
   - summit2015:
       layout: tiled
       panes:
-        - cd adobe-summit-2015 && git fetch upstream && git merge upstream/master && bundle exec build:all && clear
+        - cd adobe-summit-2015 && git fetch upstream && git merge upstream/master && bundle exec rake build:all && clear
         - cd adobe-summit-2015 && clear
         - cd Attendease && git fetch upstream && git merge upstream/master && clear && bundle exec rails s
 

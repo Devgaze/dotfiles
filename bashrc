@@ -12,6 +12,7 @@ alias co="git checkout "
 alias ci="git commit "
 alias br="git branch "
 alias st="git status "
+alias fm="git fetch upstream && git merge upstream/master"
 
 # projects
 alias max='cd ~/Sites/adobe-max-2014'

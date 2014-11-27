@@ -1,0 +1,52 @@
+# ~/.tmuxinator/att.yml
+
+name: hive
+root: ~/Sites
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+# pre: git co master
+# pre: git pull
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - attendease:
+      layout: tiled
+      panes:
+        - cd Attendease && co master && git fetch upstream && git merge upstream/master && clear && bundle exec rails s
+        - cd Attendease && clear && bundle exec rails c
+        - cd Attendease && clear
+  - thirdparty:
+      layout: tiled
+      panes:
+        - cd Attendease-Third-Party-Themes && co master && fm && clear
+        - cd Attendease-Third-Party-Themes && clear
+  - creativecloud:
+      layout: tiled
+      panes:
+        - cd Attendease/var/organizations/creativecloud && co master && fm && bundle && jekyll serve --watch --destination ../../../public/organizations/creativecloud.localhost.attendease.org
+        - cd Attendease/var/organizations/creativecloud && clear
+        - cd Attendease/var/organizations/creativecloud && clear
+  - summit2015:
+      layout: tiled
+      panes:
+        - cd adobe-summit-2015 && co master && git fetch upstream && git merge upstream/master && bundle exec rake build:all && clear
+        - cd adobe-summit-2015 && clear
+  - max:
+      layout: tiled
+      panes:
+        - cd adobe-max-2014 && co master && git fetch upstream && git merge upstream/master && bundle exec rake build:all && clear
+        - cd adobe-max-2015 && clear
+  - ssh:
+
