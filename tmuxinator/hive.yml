@@ -22,11 +22,10 @@ root: ~/Sites
 
 windows:
   - attendease:
-      layout: tiled
+      layout: main-vertical
       panes:
-        - cd Attendease && co master && git fetch upstream && git merge upstream/master && clear && bundle exec rails s
+        - cd Attendease && co master && fm && clear && bundle exec rails s
         - cd Attendease && clear && bundle exec rails c
-        - cd Attendease && clear
   - thirdparty:
       layout: tiled
       panes:
@@ -35,7 +34,7 @@ windows:
   - creativecloud:
       layout: tiled
       panes:
-        - cd Attendease/var/organizations/creativecloud && co master && fm && bundle && jekyll serve --watch --destination ../../../public/organizations/creativecloud.localhost.attendease.org
+        - cd Attendease/var/organizations/creativecloud && co master && fm && bundle && jekyll serve --watch
         - cd Attendease/var/organizations/creativecloud && clear
         - cd Attendease/var/organizations/creativecloud && clear
   - summit2015:
@@ -48,5 +47,10 @@ windows:
       panes:
         - cd adobe-max-2014 && co master && git fetch upstream && git merge upstream/master && bundle exec rake build:all && clear
         - cd adobe-max-2015 && clear
+  - ayv:
+      layout: tiled
+      panes:
+        - cd youthvoices.adobe.com && co master && fm && clear && br
+        - cd youthvoices.adobe.com && clear
   - ssh:
 
